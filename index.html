@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional TO DO List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-gray-200 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-2xl">
+        <h1 class="text-3xl font-bold text-center mb-8 text-blue-400">Professional TO DO List</h1>
+        
+         <div class="bg-gray-800 rounded-lg p-6 shadow-lg mb-6">
+            <form id="taskForm" class="flex gap-2">
+                <input type="text" id="taskInput" placeholder="Add a new task..." 
+                    class="flex-1 bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">
+                    <i class="fas fa-plus"></i> Add
+                </button>
+            </form>
+            <div id="errorMessage" class="text-red-400 text-sm mt-2 hidden">Please enter a task!</div>
+        </div>
+        
+         <div class="flex justify-center gap-2 mb-6">
+            <button data-filter="all" class="filter-btn bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition active">All</button>
+            <button data-filter="active" class="filter-btn bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition">Active</button>
+            <button data-filter="completed" class="filter-btn bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition">Completed</button>
+        </div>
+        
+         <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <ul id="taskList" class="divide-y divide-gray-700">
+             </ul>
+            
+             <div class="bg-gray-700 px-4 py-3 text-sm text-gray-400">
+                <span id="taskCount">0</span> tasks remaining
+            </div>
+        </div>
+    </div>
+
+     <div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-gray-800 rounded-lg p-6 w-full max-w-md">
+            <h2 class="text-xl font-bold mb-4">Edit Task</h2>
+            <input type="text" id="editInput" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <div class="flex justify-end gap-2">
+                <button id="cancelEdit" class="bg-gray-600 hover:bg-gray-500 px-4 py-2 rounded-lg">Cancel</button>
+                <button id="saveEdit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
