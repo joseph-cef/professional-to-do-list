@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const taskList = document.getElementById('taskList');
     const errorMessage = document.getElementById('errorMessage');
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const taskCount = document.getElementById('taskCount');
     const editModal = document.getElementById('editModal');
     const editInput = document.getElementById('editInput');
     const cancelEdit = document.getElementById('cancelEdit');
@@ -38,8 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update task counter
     function updateTaskCount() {
         const activeTasks = tasks.filter(task => !task.completed).length;
-        taskCount.textContent = activeTasks;
-    }
+     }
     
     // Render tasks based on current filter
     function renderTasks() {
